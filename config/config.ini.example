@@ -1,0 +1,26 @@
+# itdby-ddns 运行配置示例
+# 复制为 config/config.ini 后填入真实值；该文件不进仓库，也不进镜像。
+
+[credentials]
+# 华为云 IAM 访问密钥，在「我的凭证 - 访问密钥」创建
+ak = your_access_key_id
+sk = your_secret_access_key
+
+[dns]
+# region 与 endpoint 二者设其一即可；同时设置时 region 生效，endpoint 不生效
+region = af-south-1
+# endpoint = https://dns.af-south-1.myhuaweicloud.com
+ttl = 300
+
+[domains]
+# JSON 数组，仅支持 A 记录所在域名；通配符按 *.example.com 原样写
+domain_list = ["example.com", "*.example.com"]
+
+[log]
+log_dir = ./logs
+
+[task]
+# 轮询间隔，秒，最小 30
+interval_seconds = 300
+# 启动时强制与云端核对一次
+startup_check = true

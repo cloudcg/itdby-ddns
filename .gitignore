@@ -1,0 +1,7 @@
+config/config.ini
+config/last_ip.txt
+logs/
+__pycache__/
+*.pyc
+*.bak
+.env
